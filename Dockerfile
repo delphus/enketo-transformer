@@ -1,4 +1,4 @@
-FROM node:8-alpine
+FROM node:8
 
 WORKDIR /usr/src/app
 
@@ -7,7 +7,7 @@ WORKDIR /usr/src/app
 # where available (npm@5+)
 COPY package*.json ./
 
-RUN apk add -u python2 libxml2 make g++ && npm install
+RUN npm install
 
 COPY . .
 
